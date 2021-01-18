@@ -21,9 +21,7 @@ const signin = async (req, res) => {
 
     const token = jwt.sign({
       _id: user._id
-    }, config.jwtSecret, {
-      algorithm: 'HS256'
-    })
+    }, config.jwtSecret)
 
     res.cookie("t", token, {
       expire: new Date() + 9999
